@@ -40,7 +40,7 @@ import "@picocss/pico/css/pico.min.css";
 
 ### Step 3: Use PicoCSS in Your HTML
 
-You can now use PicoCSS classes in the HTML in your .astro files. For example, to center your content and set a reasonable width, you can add the following:
+You can now use PicoCSS classes in the HTML files (or in the HTML generated in your `js` files). For example, to center your content and set a reasonable width, you can add the following:
 
 ```html
 <main class="container">
@@ -70,22 +70,19 @@ npm install aos
 
 ### Step 2: Modify `main.js`
 
-Open your `main.js` file in the `scripts` directory and modify it as follows.
-
-(1) Underneath the comment `//Add imports here` add the imports
-for the CSS and JS needed for AOS.
+Open your `main.js` file in the `scripts` directory and add the following lines:
 
 ```js
 import Aos from "aos";
 import "aos/dist/aos.css";
 ```
 
-(2) Underneath the comment `// Code that runs ONLY in the browser` add:
-console.log("Hello world, from main.js!");
+Next, to make AOS run, we need to add this line which starts up Aos.
 
 ```js
 Aos.init();
 ```
+
 
 ### Step 3: Use AOS in Your HTML
 

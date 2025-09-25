@@ -4,14 +4,14 @@
   "description": "Web Design Portfolio Assignment",
   "main": "main.js",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "astro": "^4.15.9"
+  "devDependencies": {
+    "vite": "^5.0.0"
   }
 }

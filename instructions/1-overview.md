@@ -4,8 +4,9 @@
 
 ## Project Structure Overview
 
-Understanding the project structure is key to making changes effectively. 
-First, a warning: this project has a *lot* of folders! I haven't hidden any of the folders from you this time because as you troubleshoot the various phases of the project, you made need access to all the different configuration files that help your project run. That said, you can *ignore* most files and folders here: if a folder or file starts with a `.`, that's a sign it's what's called a "configuration file" and probably can be ignored for now.
+First, a warning: this project has a _lot_ of folders! I haven't hidden any of the folders from you this time because as you troubleshoot the various phases of the project, you made need access to all the different configuration files that help your project run.
+
+That said, you can _ignore_ most files and folders here: if a folder or file starts with a `.`, that's a sign it's what's called a "configuration file" and probably can be ignored for now.
 
 Here’s a breakdown of the files you need:
 
@@ -13,74 +14,54 @@ Here’s a breakdown of the files you need:
 
 - **Purpose**: Contains all your source code—the heart of your project.
 
-### `src/pages/` Folder
+### `src/scripts/` Folder
 
-- **Purpose**: Contains the source code for each page in your website.
-- **Details**: Subfolders here will create subdirectories in your website.
-  - Example: The `index.astro` file is the root page of your site.
+Contains all the JavaScript files that make your website work.
 
-### `src/components/` Folder
+#### `src/scripts/main.js`
 
-- **Purpose**: Contains reusable components that you can import into pages.
-- **Details**: To start with, we have a Page component, which contains all the basic
-  required HTML elements around your page and should be on every page. Then we also have
-  a Project component with the idea that you'd have a template for each project you highlight
-  on your portfolio.
+The entry point for your application. This file initializes the app and sets up routing. This file will have to **import** any other files that you create (such as new pages or utilities that you add to your website).
 
-  ### `src/styles/styles.css`
+#### `src/scripts/pages/` Folder
 
-  This file is *imported* in your `main.js` file which is built with vite, a system which can bundle various libraries into your final
-  website code.
+This is where you can add new code that is customized for different pages of your portfolio. To start, there is a `welcome.js` file that contains the code for the home page of your portfolio and a `binarySearch.js` file the contains a template for putting your first project in your portfolio. You can add more files here for additional pages.
 
-  You can write CSS directly in this file if you learn some CSS for this
-  project, or if libraries require you to add CSS import statements, you
-  can add them to this file so your site will build correctly.
+### `src/scripts/utils/` Folder
 
+- **Purpose**: Contains utility functions that can be used across different pages.
+- **Details**: This is where you can add helper functions that are not specific to a single page but are used by multiple pages.
+  - Example: The `renderMenu.js` file contains a function to render the navigation menu on each page. You could add more utility functions here as needed.
 
-### `public/` Folder
-- **Purpose**: Contains static assets like images, fonts, and other files that you might want to reference in your project. This folder will not be "built" or "bundled" but rather the files will simply be referenced directly at the base URL of your project.
+### src/styles/ Folder
 
-## Running the Project to Test It
+This contains CSS which powers your project. You could add more CSS files here if you end up wanting to customize the _appearance_ of your portfolio, though you can also use libraries for that (more on that later).
 
-You should be able to run your project by hitting "Launch Astro" from the Run and Debug side-panel.
+## Getting Started
 
-If that fails, you can go to a terminal and run:
+1. **Install dependencies**:
+   _You can probably skip this step: Codespaces usually does it for you. But if you are running this on your own computer, you will need to run this command once to install the necessary packages._
 
-```sh
-npm run dev
-```
-
-Note: this assumes you're in a Github Codespace and everything got installed correctly.
-If not, try going to the terminal and running:
-
-```sh
+```bash
 npm install
 ```
 
-## The other folders and files
+2. **Start the dev server**:
 
-Here's an overview of the rest of the file structure:
+```bash
+  npm run dev
+```
 
-### `dist/` Folder
-- **Purpose**: Contains the output from the Astro build process.
-- **Details**: This folder is generated when you run `npm run build`. It includes all the compiled assets ready for deployment. It should never be added to version control.
+Or you can use the `play/debug` button in Codespaces.
 
-### `node_modules/` Folder
-- **Purpose**: Contains all the npm packages that your project depends on.
-- **Details**: This folder is populated when you run `npm install` and should not be modified manually.
+3. **Open your browser** to [http://localhost:5173](http://localhost:5173) (or the URL shown in your terminal).
 
-### `.github/workflows/` Folder
-- **Purpose**: Contains GitHub Actions configurations for Continuous Integration (CI) and Continuous Deployment (CD).
-- **Details**: For example, `deploy.yml` automates the process of deploying your built site to GitHub Pages.
+4. **Edit pages and utilities** in the `src/scripts/` folder. The site will reload automatically.
 
-### `.vscode/` Folder
-- **Purpose**: Contains configurations for Visual Studio Code (the editor you're using in Github Codespaces), such as settings, extensions, and debug configurations.
-- **Details**: Helps maintain consistency in development settings across different environments.
+## Next Steps
 
-### `astro.config.mjs` and `vite.config.js`
-- **astro.config.mjs**: The main configuration file for Astro, where you can set global configurations for your project. Astro is the site generator that creates HTML files based on your source code.
-- **vite.config.js**: Configuration file for Vite, which allows customization of the build process, such as defining plugins, modifying build outputs, and more. Vite helps you "bundle" JavaScript and CSS from various libraries into one project.
+1. [First Change](2-first-change.md): Make your first edit.
+2. [Using Libraries](3-library-instructions.md): Learn how to add JavaScript libraries.
+3. [Create a Component](5-create-component.md): Build your own reusable code.
+4. [Deploy](7-urls-and-publishing.md): Publish your site online.
 
-### `instructions/` Folder
-- **Purpose**: Contains markdown files that provide guidance and instructions for using the project, such as the one you're reading now.
-- **Tip**: If you click on a markdown file, you'll see the source code for it, which just looks like text. If you click on the "Preview" icon (it looks like a two-page book with a magnifying glass), it will open the "pretty" version of the rendered markdown.
+---
