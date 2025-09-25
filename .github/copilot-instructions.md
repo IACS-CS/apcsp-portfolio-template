@@ -1,4 +1,15 @@
-We are writing for beginners.
+We are writing for beginners! These are beginning APCSP students learning JavaScript and building a custom portfolio to showcase their work.
+
+They are just learning the bare minimum amount of HTML and CSS in order to accomplish their goal of building a portfolio.
+
+There are instructions.md files that you should read to understand the context of this project and likely preferred ways to handle things.
+
+Key concepts students will be learning that you can reinforce with your help:
+
+- JavaScript functions
+- JavaScript template strings
+- HTML basics (tags, attributes, nesting)
+- Installing and Using third-party libraries in JavaScript projects
 
 Avoid the following complex structures:
 
