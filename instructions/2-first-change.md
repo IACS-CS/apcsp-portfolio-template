@@ -1,35 +1,22 @@
-# Making Your First Change.
+# Making Your First Changes
 
-[Back to Overview](../README.md) | [Next: Your first library](./3-library-instructions.md) 
+[Back to Overview](../README.md) | [Next: Your first library](./3-library-instructions.md)
 
 Let's assume you've already got the project running by following
 the instructions in the [overview](./1-overview.md).
 
 A good next step is making sure you know how to make an edit to the file and see it change.
 
-Let's start with the first page of your website, which is in `src/pages/index.html`
+## src/scripts/pages/welcome.js
 
-Where it says:
+Let's start with the first page of your website, which is in `src/pages/welcome.js`
 
-```astro
-<Page title="FIXME Portfolio">
-```
+That file currently has a single `function` which returns `HTML` which is the markup for your webpage. You can change where it says `<h1>Student Portfolio</h1>`
+so that it welcomes people to your own portfolio (for example: `<h1>Maria's Portfolio</h1>`).
 
-Go ahead and change the word "FIXME" to your own first name, so it looks something like this:
+## index.html
 
-```astro
-<Page title="Ava's Portfolio">
-```
-
-Next up, go ahead and change the _h1_ tag to also show your new name:
-
-```html
-<h1>Ava's Portfolio</h1>
-```
-
-At this point, you should see the change reflected in the browser in two places: you'll see the bolded
-words from the `<h1>` tag and then if you open the page in its own tab, you'll see the title you entered
-in the tab.
+`welcome.js` is the page that is loaded by `JavaScript` when the function in `main.js` first runs. HOWEVER, there is also a static page that you can find in `index.html` which is the page that loads before your first JavaScript runs. You'll notice that it also has an `<h1>` tag that you can change to say something like "Welcome to My Portfolio".
 
 To learn more about HTML, read my [About Markup](./A-about-markup.md) intro.
 
@@ -44,7 +31,7 @@ defined and you can look for where `{title}` is used in the source code. The bra
 way of allowing you to insert a property into a template: this is a common pattern in templating languages
 and it's a way of allowing markup language designers to handle code reuse elgantly.
 
-## Making Your First *Component* Change
+## Making Your First _Component_ Change
 
 Let's go ahead and open up `Page.astro` and try
 making a change to our Page template.
@@ -54,15 +41,15 @@ close tag, we can add a new footer, like this:
 
 ```astro
 <footer>
-  Page by <b>My Name</b>, 
+  Page by <b>My Name</b>,
   last updated October, 2024.
   All rights reserved.
 </footer>
 ```
 
 Now if you look at your sample site, you'll notice
-the footer will show up on *every* page that uses 
-your `Page.astro` component. 
+the footer will show up on _every_ page that uses
+your `Page.astro` component.
 
 This is the power of components: it prevents you having
 to repeat yourself! Any time you find yourself copy/pasting a lot of code from one page to another, you should
