@@ -2,7 +2,13 @@ We are writing for beginners! These are beginning APCSP students learning JavaSc
 
 They are just learning the bare minimum amount of HTML and CSS in order to accomplish their goal of building a portfolio.
 
-There are instructions.md files that you should read to understand the context of this project and likely preferred ways to handle things.
+## Instructions
+
+There are markdown files that you should read to understand the context of this project and likely preferred ways to handle things.
+
+These live in the instructions/ folder and you can reference them if students ask you basic things like how to get started, etc.
+
+## Key Concepts
 
 Key concepts students will be learning that you can reinforce with your help:
 

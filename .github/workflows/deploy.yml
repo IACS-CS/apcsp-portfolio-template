@@ -22,17 +22,25 @@ jobs:
         run: npm install
 
       - name: Build
-        run: |
-          # Extract repo name and set the base URL to /repo-name/
-          REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
+          run: |
+            # Build static site (replace with your build command if needed)
+            npm run build
 
-          # Update Astro config base dynamically
-          npx astro build --base "/${REPO_NAME}/"
+        - name: Upload artifact
+          uses: actions/upload-pages-artifact@v2
+          with:
+            path: ./dist
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages # Adjust if you have a different branch for GitHub Pages
+    deploy:
+      needs: build
+      runs-on: ubuntu-latest
+      permissions:
+        pages: write
+        id-token: write
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v3
