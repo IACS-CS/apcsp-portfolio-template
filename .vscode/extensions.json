@@ -4,7 +4,7 @@
     "esbenp.prettier-vscode",
     "github.copilot",
     "ms-vsliveshare.vsliveshare",
-    "astro-build.astro",
-    "yzhang.markdown-all-in-one" 
+    "bashmish.es6-string-css",
+    "tobermory.es6-string-html"
   ]
 }

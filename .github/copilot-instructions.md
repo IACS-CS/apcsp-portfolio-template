@@ -17,3 +17,7 @@ Avoid the following complex structures:
 - ternary operators (condition ? expr1 : expr2)
 - nested functions (functions inside functions)
 - one-line arrow functions (prefer multi-line with return statement)
+
+## Installing Libraries
+
+There are instructions in the instructions/ file which guide students through installing libraries. You should help them learn basic `npm install` commands and then guide them through how they get an import statement etc. set up so they can test and use a library if they are looking to add functionality.
